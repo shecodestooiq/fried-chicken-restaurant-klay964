@@ -1,7 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import RestaurantCard from './components/RestaurantCard';
-import RestaurantDetails from './components/RestaurantDetails';
-import RestaurantsList from './components/RestaurantsList';
+
 import RestaurantForm from './components/RestaurantForm/RestaurantForm';
 import React from 'react';
 import '@testing-library/jest-dom';
@@ -91,7 +90,7 @@ describe('RestaurantCard component', () => {
       <Router>
         <RestaurantCard
           rest={restaurant}
-          deleteRestaurant={() => { }}
+          deleteRestaurant={() => {}}
           updateRange={mockUpdateRange}
         />
       </Router>
@@ -117,8 +116,8 @@ describe('RestaurantCard component', () => {
       <MemoryRouter>
         <RestaurantCard
           rest={restaurant}
-          deleteRestaurant={() => { }}
-          updateRange={() => { }}
+          deleteRestaurant={() => {}}
+          updateRange={() => {}}
         />
       </MemoryRouter>
     );
@@ -136,13 +135,13 @@ describe('RestaurantForm component', () => {
     const { getByTestId, getByText } = render(
       <RestaurantForm
         nameValue={''} // Provide the initial value for nameValue
-        setNameValue={() => { }} // Provide a mock function for setNameValue
+        setNameValue={() => {}} // Provide a mock function for setNameValue
         locationValue={''} // Provide the initial value for locationValue
-        setLocationValue={() => { }} // Provide a mock function for setLocationValue
+        setLocationValue={() => {}} // Provide a mock function for setLocationValue
         rangeValue={''} // Provide the initial value for rangeValue
-        setRangeValue={() => { }} // Provide a mock function for setRangeValue
+        setRangeValue={() => {}} // Provide a mock function for setRangeValue
         restaurant={[]} // Provide the initial value for restaurant
-        setRestaurant={() => { }} // Provide a mock function for setRestaurant
+        setRestaurant={() => {}} // Provide a mock function for setRestaurant
       />
     );
 
@@ -160,6 +159,9 @@ describe('RestaurantForm component', () => {
     expect(getByTestId('restaurant-name-input')).toHaveValue('');
 
     // Optional assertion to check placeholder
-    expect(getByTestId('restaurant-name-input')).toHaveAttribute('placeholder', 'Restaurant name');
+    expect(getByTestId('restaurant-name-input')).toHaveAttribute(
+      'placeholder',
+      'Restaurant name'
+    );
   });
 });
